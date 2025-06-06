@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts</title>
+    <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+  <div class="contacts-main">
+  <nav class="contacts-navbar">
+    <span class="logo">AGENDA  DE CONTACTOS</span>
+    <div class="nav-links">
+    </div>
+    <div class="user-info">
+      <span class="username">{{ userEmail }}</span>
+      <button class="logout-btn" (click)="logout()">Cerrar sesión</button>
+    </div>
+  </nav>
+  <div class="contacts-content">
+    <div class="contacts-header">
+      <h2 class="contacts-title cursiva-llamativa"><em>Mis Contactos</em></h2>
+    </div>
+    <div class="contacts-controls">
+      <button class="new-contact-btn" (click) = "goToNewContact()">Nuevo Contacto</button>
+      <label class="search-label">
+        Buscar:
+        <input type="text" placeholder="Buscar..." [(ngModel)]="searchText">
+      </label>
+    </div>
+    <div class="contacts-table-wrapper">
+      <table class="contacts-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Teléfono Fijo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of filteredContacts; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td *ngIf="editingIndex !== i">{{ contact.nombre }}</td>
+            <td *ngIf="editingIndex === i">
+              <input [(ngModel)]="editedContact.nombre" class="edit-input" />
+            </td>
+            <td *ngIf="editingIndex !== i">{{ contact.apellidos }}</td>
+            <td *ngIf="editingIndex === i">
+              <input [(ngModel)]="editedContact.apellidos" class="edit-input" />
+            </td>
+            <td *ngIf="editingIndex !== i">{{ contact.email }}</td>
+            <td *ngIf="editingIndex === i">
+              <input [(ngModel)]="editedContact.email" class="edit-input" />
+            </td>
+            <td *ngIf="editingIndex !== i">{{ contact.celular }}</td>
+            <td *ngIf="editingIndex === i">
+              <input [(ngModel)]="editedContact.celular" class="edit-input" />
+            </td>
+            <td *ngIf="editingIndex !== i">{{ contact.telefono_fijo }}</td>
+            <td *ngIf="editingIndex === i">
+              <input [(ngModel)]="editedContact.telefono_fijo" class="edit-input" />
+            </td>
+            <td>
+              <ng-container *ngIf="editingIndex === i; else editDeleteBtns">
+                <button class="save-btn" (click)="saveEdit(contact._id, i)">Guardar</button>
+                <button class="cancel-btn" (click)="cancelEdit()">Cancelar</button>
+              </ng-container>
+              <ng-template #editDeleteBtns>
+                <button class="edit-btn" (click)="startEdit(i, contact)">Editar</button>
+                <button class="delete-btn" (click)="deleteContact(contact._id, i)">Eliminar</button>
+              </ng-template>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="contacts-pagination">
+    </div>
+    <div *ngIf="showError" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="showSuccess" class="alert alert-success">{{ successMessage }}</div>
+  </div>
+</div>
+</body>
+</html>

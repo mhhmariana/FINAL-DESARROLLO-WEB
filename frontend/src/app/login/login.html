@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="#">
+      <h2>Inicia tu sesión</h2>
+      <div class="input-field">
+        <input type="email" required id="input_email" name="email" [(ngModel)]="email">
+        <label>Ingresa tu correo</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required id="input_password" name="password" [(ngModel)]="password">
+        <label>Ingresa tu contraseña</label>
+      </div>
+      <div class = "col-12 alert alert-danger" role ="alert" *ngIf="showError">
+        Ocurrio un error al iniciar sesión, por favor verifique sus credenciales.
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>¿Recordarme?</p>
+        </label>
+        <a href="#">Olvidó su contraseña?</a>
+      </div>
+      <button type="submit" (click)="validatecredentials()">Iniciar Sesión</button>
+      <div class="register">
+        <p>Aún no tienes una cuenta? <a href="../register-usr">Registrate</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

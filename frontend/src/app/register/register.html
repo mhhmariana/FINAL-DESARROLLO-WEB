@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="#" (ngSubmit)="registerContact()">
+      <h2>Añadir contacto</h2>
+      <div class="form-columns">
+        <div class="column">
+          <div class="input-field">
+            <input type="text" required id="input_nombre" name="nombre" [(ngModel)]="nombre" autocomplete="given-name">
+            <label>Nombre</label>
+          </div>
+          <div class="input-field">
+            <input type="text" required id="input_apellidos" name="apellidos" [(ngModel)]="apellidos" autocomplete="family-name">
+            <label>Apellidos</label>
+          </div>
+          <div class="input-field">
+            <input type="tel" required id="input_telefono" name="telefono" [(ngModel)]="telefono" pattern="[0-9]{7,}" maxlength="15" autocomplete="tel">
+            <label>Teléfono fijo</label>
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-field">
+            <input type="tel" required id="input_celular" name="celular" [(ngModel)]="celular" pattern="[0-9]{10,}" maxlength="15" autocomplete="tel-national">
+            <label>Celular</label>
+          </div>
+          <div class="input-field">
+            <input type="email" required id="input_email" name="email" [(ngModel)]="email" autocomplete="email">
+            <label>Email</label>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="showError">
+        Error al registrar el contacto. Por favor, verifica los datos ingresados, todos son obligatorios.
+      </div>
+      <div class="alert alert-success" *ngIf="showSuccess">
+        Contacto agregado correctamente.
+      </div>  
+      <div class="form-actions">
+        <button type="submit" class="guardar-btn">Guardar</button>
+        <button type="button" class="cancelar-btn" onclick="window.location.href='../contacts'">Cancelar</button>
+    </div>
+
+    </form>
+  </div>
+</body>
+</html>
