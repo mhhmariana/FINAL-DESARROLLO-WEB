@@ -44,7 +44,7 @@ Este proyecto representa la entrega final de la materia Desarrollo Web, donde se
 - `node_modules/` - Dependencias (se instalan con `npm install`)
 - `package-lock.json` - Archivo de lock de dependencias
 - `.angular/` - Cache de Angular
-- `.env` - Variables de entorno (por seguridad)
+- `.env` - Variables de entorno
 
 ## 🤝 Contribuciones
 
