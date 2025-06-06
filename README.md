@@ -46,11 +46,6 @@ Este proyecto representa la entrega final de la materia Desarrollo Web, donde se
 - `.angular/` - Cache de Angular
 - `.env` - Variables de entorno
 
-## 🤝 Contribuciones
-
-Este proyecto fue desarrollado como trabajo colaborativo entre los integrantes mencionados arriba, cumpliendo con los requisitos establecidos para la entrega final de la materia Desarrollo Web.
-
-## 📄 Licencia
 
 Este proyecto es de uso académico y fue desarrollado con fines educativos.
 
