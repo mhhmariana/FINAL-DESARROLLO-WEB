@@ -1,4 +1,4 @@
-# FINAL-DESARROLLO-WEB
+# FINAL-ARQUITECTURA-SOFTWARE
 
 ## 📋 Información del Proyecto
 
@@ -50,4 +50,4 @@ Este proyecto implementa un **sistema de validación de seguros vehiculares** ba
 
 **Fecha de Entrega:** Junio 6 del 2025  
 **Profesor:** Nestor Velez Vargas  
-**Materia:** Desarrollo Web
+**Materia:** Arquitectura de software
