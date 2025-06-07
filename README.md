@@ -2,10 +2,10 @@
 
 ## 📋 Información del Proyecto
 
-**Materia:** Desarrollo Web  
+**Materia:** Arquitectura de Software
 **Tipo:** Entrega Final  
-**Institución:** Unilasallista Corporación Universitaria
-**Período Académico:** Septimo Semestre
+**Institución:** Unilasallista Corporación Universitaria  
+**Período Académico:** Séptimo Semestre
 
 ## 👥 Integrantes del Equipo
 
@@ -14,43 +14,40 @@
 
 ## 🎯 Objetivo del Proyecto
 
-Este proyecto representa la entrega final de la materia Desarrollo Web, donde se implementó un **sistema CRUD completo** utilizando tecnologías modernas de desarrollo full-stack (Angular + Node.js + MongoDB).
+Este proyecto implementa un **sistema de validación de seguros vehiculares** basado en el historial de accidentes, utilizando una **arquitectura de microservicios** con tecnologías .NET y bases de datos SQL Server.
 
-### Funcionalidades CRUD Implementadas:
-- **CREATE (Crear):** Creación de usuarios y contactos propios de la base de datos
-- **READ (Leer):** Consulta de los contactos creados por cada usuario
-- **UPDATE (Actualizar):** Modificación de contactos propios del usuario
-- **DELETE (Eliminar):** Eliminación de dcontactos propios del usuario
+### Funcionalidades Principales:
+- **Consulta de Accidentes:** Obtención del historial de accidentes por placa vehicular
+- **Validación de Seguros:** Evaluación automática basada en la severidad de accidentes
+- **Almacenamiento de Validaciones:** Registro de todas las validaciones realizadas
+- **API REST:** Endpoints para integración con sistemas externos
 
-## 🛠️ Tecnologías Utilizadas
+## 🏗️ Arquitectura del Sistema
 
-### Frontend
-- **Angular** - Framework de desarrollo web
-- **TypeScript** - Lenguaje de programación
-- **HTML5 & CSS3** - Estructura y estilos
-- **Angular CLI** - Herramientas de desarrollo
+### Microservicio 1: Consulta de Accidentes
+- **Propósito:** Proporcionar información detallada sobre accidentes vehiculares
+- **Respuesta:** Datos de accidente (ID, Placa, Severidad, Fecha)
 
-### Backend
-- **Node.js** - Entorno de ejecución
-- **Express.js** - Framework web para Node.js
-- **JavaScript** - Lenguaje de programación del servidor
-- **MongoDB** - Base de datos NoSQL
-- **Mongoose** - ODM para MongoDB y Node.js
+### Microservicio 2: Validación de Seguros
+- **Propósito:** Evaluar solicitudes de seguro y almacenar resultados
+- **Funcionalidades:**
+  - Consulta al microservicio de accidentes
+  - Almacenamiento en base de datos
 
+## 📊 Lógica de Negocio
 
-## 📝 Notas Importantes
+### Sistema de Puntuación por Severidad:
+- **Solo Latas:** 100 puntos
+- **Heridos:** 200 puntos  
+- **Muertos:** 300 puntos
 
-⚠️ **Archivos excluidos del repositorio:**
-- `node_modules/` - Dependencias (se instalan con `npm install`)
-- `package-lock.json` - Archivo de lock de dependencias
-- `.angular/` - Cache de Angular
-- `.env` - Variables de entorno
-
-
-Este proyecto es de uso académico y fue desarrollado con fines educativos.
+### Criterios de Aprobación:
+- **≥ 300 puntos:** "Rechazada - Historial grave de accidentes"
+- **< 300 puntos:** "Aprobada - Historial aceptable"
+- **Sin historial:** "Aprobada - Sin historial de accidentes"
 
 ---
 
-**Fecha de Entrega:** Mayo 5 del 2025  
-**Profesor:** Nestor Velez Vargas
+**Fecha de Entrega:** Junio 6 del 2025  
+**Profesor:** Nestor Velez Vargas  
 **Materia:** Desarrollo Web
